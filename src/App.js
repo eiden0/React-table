@@ -6,6 +6,9 @@ import Table from "./components/Table";
 const App = () => {
   return (
     <main className={styles.container}>
+      <header>
+        <p>React Table Component</p>
+      </header>
       <div className={styles.wrapper}>
         <Table data={data} rowsPerPage={5} />
       </div>

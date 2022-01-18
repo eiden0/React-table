@@ -1,19 +1,46 @@
 import React, { useState } from "react";
-import useTable from "../../hooks/useTable";
 import styles from "./Table.module.css";
 import TableFooter from "./TableFooter";
+import useTable from "../../hooks/useTable";
+import useSortableData from "../../hooks/useSort";
 
 const Table = ({ data, rowsPerPage }) => {
   const [page, setPage] = useState(1);
-  const { slice, range } = useTable(data.data, page, rowsPerPage);
+  const { items, requestSort, sortConfig } = useSortableData(data.data);
+  console.log(sortConfig);
+  const { slice, range } = useTable(items, page, rowsPerPage);
   return (
     <>
       <table className={styles.table}>
         <thead className={styles.tableRowHeader}>
           <tr>
-            <th className={styles.tableHeader}>Country</th>
-            <th className={styles.tableHeader}>Age</th>
-            <th className={styles.tableHeader}>Gender</th>
+            <th className={styles.tableHeader}>
+              <button
+                type="button"
+                class={styles["button-8"]}
+                onClick={() => requestSort('name')}
+              >
+                Name
+              </button>
+            </th>
+            <th className={styles.tableHeader}>
+              <button
+                type="button"
+                class={styles["button-8"]}
+                onClick={() => requestSort('age')}
+              >
+                Age
+              </button>
+            </th>
+            <th className={styles.tableHeader}>
+              <button
+                type="button"
+                class={styles["button-8"]}
+                onClick={() => requestSort('gender')}
+              >
+                Gender
+              </button>
+            </th>
           </tr>
         </thead>
         <tbody>
