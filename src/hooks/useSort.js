@@ -1,6 +1,6 @@
 import { useState, useMemo } from "react";
 
-const useSortableData = (items, config = null) => {
+const useSort = (items, config = null) => {
   const [sortConfig, setSortConfig] = useState(config);
   // memoizing the sort function to prevent re-runs on every render
   const sortedItems = useMemo(() => {
@@ -30,8 +30,7 @@ const useSortableData = (items, config = null) => {
     }
     setSortConfig({ key, direction });
   };
-
-  return { items: sortedItems, requestSort, sortConfig };
+  return { items: sortedItems, requestSort };
 };
 
-export default useSortableData;
+export default useSort;

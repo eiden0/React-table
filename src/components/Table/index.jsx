@@ -2,12 +2,11 @@ import React, { useState } from "react";
 import styles from "./Table.module.css";
 import TableFooter from "./TableFooter";
 import useTable from "../../hooks/useTable";
-import useSortableData from "../../hooks/useSort";
+import useSort from "../../hooks/useSort";
 
 const Table = ({ data, rowsPerPage }) => {
   const [page, setPage] = useState(1);
-  const { items, requestSort, sortConfig } = useSortableData(data.data);
-  console.log(sortConfig);
+  const { items, requestSort } = useSort(data.data);
   const { slice, range } = useTable(items, page, rowsPerPage);
   return (
     <>
