@@ -1,0 +1,16 @@
+{
+  "data" : [
+    { "name": "Anom", "age": "19", "gender": "Male" },
+    { "name": "Megha", "age": "19", "gender": "Female" },
+    { "name": "Megha", "age": "19", "gender": "Female" },
+    { "name": "Anom", "age": "19", "gender": "Male" },
+    { "name": "Rohit", "age": "25", "gender": "Male"},
+    { "name": "Anom", "age": "19", "gender": "Male" },
+    { "name": "Mark", "age": "25", "gender": "Male"},
+    { "name": "John", "age": "19", "gender": "Female" },
+    { "name": "Subham", "age": "25", "gender": "Male"},
+    { "name": "Jack", "age": "25", "gender": "Male"},
+    { "name": "Kyle", "age": "19", "gender": "Female" },
+    { "name": "Oliver", "age": "25", "gender": "Male"}
+  ]
+}
