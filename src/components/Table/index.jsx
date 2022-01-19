@@ -4,42 +4,28 @@ import TableFooter from "./TableFooter";
 import useTable from "../../hooks/useTable";
 import useSort from "../../hooks/useSort";
 
-const Table = ({ data, rowsPerPage }) => {
+const Table = ({ headers, rows, rowsPerPage }) => {
   const [page, setPage] = useState(1);
-  const { items, requestSort } = useSort(data.data);
+  const { items, requestSort } = useSort(rows);
   const { slice, range } = useTable(items, page, rowsPerPage);
   return (
     <>
       <table className={styles.table}>
         <thead className={styles.tableRowHeader}>
           <tr>
-            <th className={styles.tableHeader}>
-              <button
-                type="button"
-                class={styles["button-8"]}
-                onClick={() => requestSort('name')}
-              >
-                Name
-              </button>
-            </th>
-            <th className={styles.tableHeader}>
-              <button
-                type="button"
-                class={styles["button-8"]}
-                onClick={() => requestSort('age')}
-              >
-                Age
-              </button>
-            </th>
-            <th className={styles.tableHeader}>
-              <button
-                type="button"
-                class={styles["button-8"]}
-                onClick={() => requestSort('gender')}
-              >
-                Gender
-              </button>
-            </th>
+            {headers.map((header, index) => {
+              return (
+                <th className={styles.tableHeader} key={index}>
+                  <button
+                    type="button"
+                    className={styles["button-8"]}
+                    onClick={() => requestSort("name")}
+                  >
+                    {header}
+                  </button>
+                </th>
+              );
+            })}
           </tr>
         </thead>
         <tbody>

@@ -1,5 +1,6 @@
 {
-  "data" : [
+  "headers" : ["Name", "Age", "Gender"],
+  "rows" : [
     { "name": "Anom", "age": "19", "gender": "Male" },
     { "name": "Megha", "age": "19", "gender": "Female" },
     { "name": "Megha", "age": "19", "gender": "Female" },

@@ -4,13 +4,14 @@ import styles from "./App.module.css";
 import Table from "./components/Table";
 
 const App = () => {
+  const {headers, rows} = data;
   return (
     <main className={styles.container}>
       <header>
         <p>React Table Component</p>
       </header>
       <div className={styles.wrapper}>
-        <Table data={data} rowsPerPage={5} />
+        <Table headers = {headers} rows={rows} rowsPerPage={5} />
       </div>
     </main>
   );
